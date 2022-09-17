@@ -1,0 +1,1005 @@
+.pace {
+    z-index: 2000;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    background: rgb(246, 188, 42);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.pace .pace-progress {
+    transform: none !important;
+    display: block;
+    width: 300px;
+    max-width: 300px;
+    margin: auto;
+    overflow: hidden;
+    flex: 0 0 100%;
+    position: relative;
+    text-align: left;
+}
+
+.pace .pace-progress:after {
+    /*content: attr(data-progress-text);*/
+    content: '';
+    display: inline-block;
+    text-align: right;
+    position: static;
+    height: 4px;
+    padding-right: 16px;
+    top: auto;
+    background: #000;
+    left: 0;
+    max-width: 300px;
+    margin: 0;
+    border-radius: 10px;
+}
+
+.pace .pace-progress:before {
+    content: '';
+    display: inline-block;
+    position: static;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    top: 0;
+    background: url(../images/preloader/1.png) center no-repeat;
+    background-size: 160px;
+    margin: auto;
+}
+
+.pace .pace-progress[data-progress-text="0%"]:before {
+    background: url('../images/preloader/1.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="2%"]:before {
+    background: url('../images/preloader/1.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="3%"]:before {
+    background: url('../images/preloader/1.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="4%"]:before {
+    background: url('../images/preloader/1.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="5%"]:before {
+    background: url('../images/preloader/1.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="6%"]:before {
+    background: url('../images/preloader/1.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="7%"]:before {
+    background: url('../images/preloader/1.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="8%"]:before {
+    background: url('../images/preloader/1.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="9%"]:before {
+    background: url('../images/preloader/1.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="10%"]:before {
+    background: url('../images/preloader/1.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="11%"]:before {
+    background: url('../images/preloader/1.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="12%"]:before {
+    background: url('../images/preloader/2.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="13%"]:before {
+    background: url('../images/preloader/2.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="14%"]:before {
+    background: url('../images/preloader/2.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="15%"]:before {
+    background: url('../images/preloader/2.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="16%"]:before {
+    background: url('../images/preloader/2.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="17%"]:before {
+    background: url('../images/preloader/2.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="18%"]:before {
+    background: url('../images/preloader/2.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="19%"]:before {
+    background: url('../images/preloader/2.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="20%"]:before {
+    background: url('../images/preloader/2.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="21%"]:before {
+    background: url('../images/preloader/2.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="22%"]:before {
+    background: url('../images/preloader/2.png') center no-repeat;
+    background-size: 160px;
+}
+
+/**/
+
+.pace .pace-progress[data-progress-text="23%"]:before {
+    background: url('../images/preloader/3.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="24%"]:before {
+    background: url('../images/preloader/3.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="25%"]:before {
+    background: url('../images/preloader/3.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="26%"]:before {
+    background: url('../images/preloader/3.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="27%"]:before {
+    background: url('../images/preloader/3.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="28%"]:before {
+    background: url('../images/preloader/3.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="29%"]:before {
+    background: url('../images/preloader/3.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="23%"]:before {
+    background: url('../images/preloader/3.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="31%"]:before {
+    background: url('../images/preloader/3.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="32%"]:before {
+    background: url('../images/preloader/3.png') center no-repeat;
+    background-size: 160px;
+}
+
+/**/
+
+.pace .pace-progress[data-progress-text="33%"]:before {
+    background: url('../images/preloader/4.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="34%"]:before {
+    background: url('../images/preloader/4.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="35%"]:before {
+    background: url('../images/preloader/4.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="36%"]:before {
+    background: url('../images/preloader/4.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="37%"]:before {
+    background: url('../images/preloader/4.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="38%"]:before {
+    background: url('../images/preloader/4.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="39%"]:before {
+    background: url('../images/preloader/4.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="40%"]:before {
+    background: url('../images/preloader/4.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="41%"]:before {
+    background: url('../images/preloader/4.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="42%"]:before {
+    background: url('../images/preloader/4.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="43%"]:before {
+    background: url('../images/preloader/4.png') center no-repeat;
+    background-size: 160px;
+}
+
+
+/**/
+
+.pace .pace-progress[data-progress-text="44%"]:before {
+    background: url('../images/preloader/5.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="45%"]:before {
+    background: url('../images/preloader/5.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="46%"]:before {
+    background: url('../images/preloader/5.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="47%"]:before {
+    background: url('../images/preloader/5.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="48%"]:before {
+    background: url('../images/preloader/5.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="49%"]:before {
+    background: url('../images/preloader/5.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="50%"]:before {
+    background: url('../images/preloader/5.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="51%"]:before {
+    background: url('../images/preloader/5.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="52%"]:before {
+    background: url('../images/preloader/5.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="53%"]:before {
+    background: url('../images/preloader/5.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="54%"]:before {
+    background: url('../images/preloader/5.png') center no-repeat;
+    background-size: 160px;
+}
+
+/**/
+
+.pace .pace-progress[data-progress-text="55%"]:before {
+    background: url('../images/preloader/6.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="56%"]:before {
+    background: url('../images/preloader/6.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="57%"]:before {
+    background: url('../images/preloader/6.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="58%"]:before {
+    background: url('../images/preloader/6.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="59%"]:before {
+    background: url('../images/preloader/6.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="60%"]:before {
+    background: url('../images/preloader/6.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="61%"]:before {
+    background: url('../images/preloader/6.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="62%"]:before {
+    background: url('../images/preloader/6.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="63%"]:before {
+    background: url('../images/preloader/6.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="64%"]:before {
+    background: url('../images/preloader/6.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="65%"]:before {
+    background: url('../images/preloader/6.png') center no-repeat;
+    background-size: 160px;
+}
+
+
+/**/
+
+.pace .pace-progress[data-progress-text="66%"]:before {
+    background: url('../images/preloader/7.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="67%"]:before {
+    background: url('../images/preloader/7.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="68%"]:before {
+    background: url('../images/preloader/7.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="69%"]:before {
+    background: url('../images/preloader/7.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="70%"]:before {
+    background: url('../images/preloader/7.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="71%"]:before {
+    background: url('../images/preloader/7.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="72%"]:before {
+    background: url('../images/preloader/7.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="73%"]:before {
+    background: url('../images/preloader/7.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="74%"]:before {
+    background: url('../images/preloader/7.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="75%"]:before {
+    background: url('../images/preloader/7.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="76%"]:before {
+    background: url('../images/preloader/7.png') center no-repeat;
+    background-size: 160px;
+}
+
+
+/**/
+
+.pace .pace-progress[data-progress-text="77%"]:before {
+    background: url('../images/preloader/8.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="78%"]:before {
+    background: url('../images/preloader/8.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="79%"]:before {
+    background: url('../images/preloader/8.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="80%"]:before {
+    background: url('../images/preloader/8.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="81%"]:before {
+    background: url('../images/preloader/8.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="82%"]:before {
+    background: url('../images/preloader/8.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="83%"]:before {
+    background: url('../images/preloader/8.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="84%"]:before {
+    background: url('../images/preloader/8.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="85%"]:before {
+    background: url('../images/preloader/8.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="86%"]:before {
+    background: url('../images/preloader/8.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="87%"]:before {
+    background: url('../images/preloader/8.png') center no-repeat;
+    background-size: 160px;
+}
+
+
+/**/
+
+.pace .pace-progress[data-progress-text="88%"]:before {
+    background: url('../images/preloader/9.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="89%"]:before {
+    background: url('../images/preloader/9.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="90%"]:before {
+    background: url('../images/preloader/9.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="91%"]:before {
+    background: url('../images/preloader/9.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="92%"]:before {
+    background: url('../images/preloader/9.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="93%"]:before {
+    background: url('../images/preloader/9.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="94%"]:before {
+    background: url('../images/preloader/9.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="95%"]:before {
+    background: url('../images/preloader/9.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="96%"]:before {
+    background: url('../images/preloader/9.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="97%"]:before {
+    background: url('../images/preloader/9.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="98%"]:before {
+    background: url('../images/preloader/9.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="99%"]:before {
+    background: url('../images/preloader/9.png') center no-repeat;
+    background-size: 160px;
+}
+
+.pace .pace-progress[data-progress-text="100%"]:before {
+    background: url('../images/preloader/9.png') center no-repeat;
+    background-size: 160px;
+}
+
+
+
+
+
+
+
+.pace .pace-progress[data-progress-text="1%"]:after {
+    width: 1%;
+}
+
+.pace .pace-progress[data-progress-text="2%"]:after {
+    width: 2%;
+}
+
+.pace .pace-progress[data-progress-text="3%"]:after {
+    width: 3%;
+}
+
+.pace .pace-progress[data-progress-text="4%"]:after {
+    width: 4%;
+}
+
+.pace .pace-progress[data-progress-text="5%"]:after {
+    width: 5%;
+}
+
+.pace .pace-progress[data-progress-text="6%"]:after {
+    width: 6%;
+}
+
+.pace .pace-progress[data-progress-text="7%"]:after {
+    width: 7%;
+}
+
+.pace .pace-progress[data-progress-text="8%"]:after {
+    width: 8%;
+}
+
+.pace .pace-progress[data-progress-text="9%"]:after {
+    width: 9%;
+}
+
+.pace .pace-progress[data-progress-text="10%"]:after {
+    width: 10%;
+}
+
+.pace .pace-progress[data-progress-text="11%"]:after {
+    width: 11%;
+}
+
+.pace .pace-progress[data-progress-text="12%"]:after {
+    width: 12%;
+}
+
+.pace .pace-progress[data-progress-text="13%"]:after {
+    width: 13%;
+}
+
+.pace .pace-progress[data-progress-text="14%"]:after {
+    width: 14%;
+}
+
+.pace .pace-progress[data-progress-text="15%"]:after {
+    width: 15%;
+}
+
+.pace .pace-progress[data-progress-text="16%"]:after {
+    width: 16%;
+}
+
+.pace .pace-progress[data-progress-text="17%"]:after {
+    width: 17%;
+}
+
+.pace .pace-progress[data-progress-text="18%"]:after {
+    width: 18%;
+}
+
+.pace .pace-progress[data-progress-text="19%"]:after {
+    width: 19%;
+}
+
+.pace .pace-progress[data-progress-text="20%"]:after {
+    width: 20%;
+}
+
+.pace .pace-progress[data-progress-text="21%"]:after {
+    width: 21%;
+}
+
+.pace .pace-progress[data-progress-text="22%"]:after {
+    width: 22%;
+}
+
+.pace .pace-progress[data-progress-text="23%"]:after {
+    width: 23%;
+}
+
+.pace .pace-progress[data-progress-text="24%"]:after {
+    width: 24%;
+}
+
+.pace .pace-progress[data-progress-text="25%"]:after {
+    width: 25%;
+}
+
+.pace .pace-progress[data-progress-text="26%"]:after {
+    width: 26%;
+}
+
+.pace .pace-progress[data-progress-text="27%"]:after {
+    width: 27%;
+}
+
+.pace .pace-progress[data-progress-text="28%"]:after {
+    width: 28%;
+}
+
+.pace .pace-progress[data-progress-text="29%"]:after {
+    width: 29%;
+}
+
+.pace .pace-progress[data-progress-text="30%"]:after {
+    width: 30%;
+}
+
+.pace .pace-progress[data-progress-text="31%"]:after {
+    width: 31%;
+}
+
+.pace .pace-progress[data-progress-text="32%"]:after {
+    width: 32%;
+}
+
+.pace .pace-progress[data-progress-text="33%"]:after {
+    width: 33%;
+}
+
+.pace .pace-progress[data-progress-text="34%"]:after {
+    width: 34%;
+}
+
+.pace .pace-progress[data-progress-text="35%"]:after {
+    width: 35%;
+}
+
+.pace .pace-progress[data-progress-text="36%"]:after {
+    width: 36%;
+}
+
+.pace .pace-progress[data-progress-text="37%"]:after {
+    width: 37%;
+}
+
+.pace .pace-progress[data-progress-text="38%"]:after {
+    width: 38%;
+}
+
+.pace .pace-progress[data-progress-text="39%"]:after {
+    width: 39%;
+}
+
+.pace .pace-progress[data-progress-text="40%"]:after {
+    width: 40%;
+}
+
+.pace .pace-progress[data-progress-text="41%"]:after {
+    width: 41%;
+}
+
+.pace .pace-progress[data-progress-text="42%"]:after {
+    width: 42%;
+}
+
+.pace .pace-progress[data-progress-text="43%"]:after {
+    width: 43%;
+}
+
+.pace .pace-progress[data-progress-text="44%"]:after {
+    width: 44%;
+}
+
+.pace .pace-progress[data-progress-text="45%"]:after {
+    width: 45%;
+}
+
+.pace .pace-progress[data-progress-text="46%"]:after {
+    width: 46%;
+}
+
+.pace .pace-progress[data-progress-text="47%"]:after {
+    width: 47%;
+}
+
+.pace .pace-progress[data-progress-text="48%"]:after {
+    width: 48%;
+}
+
+.pace .pace-progress[data-progress-text="49%"]:after {
+    width: 49%;
+}
+
+.pace .pace-progress[data-progress-text="50%"]:after {
+    width: 50%;
+}
+
+.pace .pace-progress[data-progress-text="51%"]:after {
+    width: 51%;
+}
+
+.pace .pace-progress[data-progress-text="52%"]:after {
+    width: 52%;
+}
+
+.pace .pace-progress[data-progress-text="53%"]:after {
+    width: 53%;
+}
+
+.pace .pace-progress[data-progress-text="54%"]:after {
+    width: 54%;
+}
+
+.pace .pace-progress[data-progress-text="55%"]:after {
+    width: 55%;
+}
+
+.pace .pace-progress[data-progress-text="56%"]:after {
+    width: 56%;
+}
+
+.pace .pace-progress[data-progress-text="57%"]:after {
+    width: 57%;
+}
+
+.pace .pace-progress[data-progress-text="58%"]:after {
+    width: 58%;
+}
+
+.pace .pace-progress[data-progress-text="59%"]:after {
+    width: 59%;
+}
+
+.pace .pace-progress[data-progress-text="60%"]:after {
+    width: 60%;
+}
+
+.pace .pace-progress[data-progress-text="61%"]:after {
+    width: 61%;
+}
+
+.pace .pace-progress[data-progress-text="62%"]:after {
+    width: 62%;
+}
+
+.pace .pace-progress[data-progress-text="63%"]:after {
+    width: 63%;
+}
+
+.pace .pace-progress[data-progress-text="64%"]:after {
+    width: 64%;
+}
+
+.pace .pace-progress[data-progress-text="65%"]:after {
+    width: 65%;
+}
+
+.pace .pace-progress[data-progress-text="66%"]:after {
+    width: 66%;
+}
+
+.pace .pace-progress[data-progress-text="67%"]:after {
+    width: 67%;
+}
+
+.pace .pace-progress[data-progress-text="68%"]:after {
+    width: 68%;
+}
+
+.pace .pace-progress[data-progress-text="69%"]:after {
+    width: 69%;
+}
+
+.pace .pace-progress[data-progress-text="70%"]:after {
+    width: 70%;
+}
+
+.pace .pace-progress[data-progress-text="71%"]:after {
+    width: 71%;
+}
+
+.pace .pace-progress[data-progress-text="72%"]:after {
+    width: 72%;
+}
+
+.pace .pace-progress[data-progress-text="73%"]:after {
+    width: 73%;
+}
+
+.pace .pace-progress[data-progress-text="74%"]:after {
+    width: 74%;
+}
+
+.pace .pace-progress[data-progress-text="75%"]:after {
+    width: 75%;
+}
+
+.pace .pace-progress[data-progress-text="76%"]:after {
+    width: 76%;
+}
+
+.pace .pace-progress[data-progress-text="77%"]:after {
+    width: 77%;
+}
+
+.pace .pace-progress[data-progress-text="78%"]:after {
+    width: 78%;
+}
+
+.pace .pace-progress[data-progress-text="79%"]:after {
+    width: 79%;
+}
+
+.pace .pace-progress[data-progress-text="80%"]:after {
+    width: 80%;
+}
+
+.pace .pace-progress[data-progress-text="81%"]:after {
+    width: 81%;
+}
+
+.pace .pace-progress[data-progress-text="82%"]:after {
+    width: 82%;
+}
+
+.pace .pace-progress[data-progress-text="83%"]:after {
+    width: 83%;
+}
+
+.pace .pace-progress[data-progress-text="84%"]:after {
+    width: 84%;
+}
+
+.pace .pace-progress[data-progress-text="85%"]:after {
+    width: 85%;
+}
+
+.pace .pace-progress[data-progress-text="86%"]:after {
+    width: 86%;
+}
+
+.pace .pace-progress[data-progress-text="87%"]:after {
+    width: 87%;
+}
+
+.pace .pace-progress[data-progress-text="88%"]:after {
+    width: 88%;
+}
+
+.pace .pace-progress[data-progress-text="89%"]:after {
+    width: 89%;
+}
+
+.pace .pace-progress[data-progress-text="90%"]:after {
+    width: 90%;
+}
+
+.pace .pace-progress[data-progress-text="91%"]:after {
+    width: 91%;
+}
+
+.pace .pace-progress[data-progress-text="92%"]:after {
+    width: 92%;
+}
+
+.pace .pace-progress[data-progress-text="93%"]:after {
+    width: 93%;
+}
+
+.pace .pace-progress[data-progress-text="94%"]:after {
+    width: 94%;
+}
+
+.pace .pace-progress[data-progress-text="95%"]:after {
+    width: 95%;
+}
+
+.pace .pace-progress[data-progress-text="96%"]:after {
+    width: 96%;
+}
+
+.pace .pace-progress[data-progress-text="97%"]:after {
+    width: 97%;
+}
+
+.pace .pace-progress[data-progress-text="98%"]:after {
+    width: 98%;
+}
+
+.pace .pace-progress[data-progress-text="99%"]:after {
+    width: 99%;
+}
+
+.pace .pace-progress[data-progress-text="100%"]:after {
+    width: 100%;
+}
+
+
+.pace-progress-inner {
+    height: 4px;
+    max-width: 300px;
+    border-radius: 10px;
+    position: absolute;
+    top: auto;
+    bottom: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: auto;
+    text-align: center;
+    font-size: 0;
+    line-height: 0;
+    font-weight: 500;
+    color: #fff;
+    text-transform: uppercase;
+    background: #fff;
+    width: 100%;
+    z-index: -1;
+}
+
+.pace.pace-inactive {
+    display: none;
+}

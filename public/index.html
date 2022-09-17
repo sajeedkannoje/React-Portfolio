@@ -1,43 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="%PUBLIC_URL%/css/owl.carousel.css" type="text/css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/css/fullpage.min.css" />
+  <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/css/cursor.css" />
+  <link rel="stylesheet" href="%PUBLIC_URL%/css/bootstrap.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="%PUBLIC_URL%/css/style.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="%PUBLIC_URL%/css/preloader.css" type="text/css" media="screen" />
+  <title>React App</title>
+</head>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<body data-spy="scroll" data-target=".navbar" data-offset="50" >
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="%PUBLIC_URL%/js/bootstrap.min.js"></script>
+  <script src="%PUBLIC_URL%/js/fullpage.min.js"></script>
+  <script src="%PUBLIC_URL%/js/scrolloverflow.js"></script>
+  <script src="%PUBLIC_URL%/js/owl.carousel.js"></script>
+  <script src="%PUBLIC_URL%/js/pace.js"></script>
+  <script>
+    jQuery(document).ready(function () {
+      jQuery("#mail-form").submit(function (e) {
+        let btn = jQuery("button[name='submit']");
+        let btnHtml = btn.html();
+        let form = $(this);
+        jQuery.ajax({
+          url: "/mail.php",
+          method: 'POST',
+          data: {
+            first_name: jQuery("input[name='first_name']").val(),
+            last_name: jQuery("input[name='last_name']").val(),
+            email: jQuery("input[name='email']").val(),
+            phone: jQuery("input[name='phone']").val(),
+            message: jQuery("textarea[name='message']").val(),
+          },
+          beforeSend: function () {
+            btn.html("Loading...");
+            btn.attr('disabled', 'disabled');
+            $("#mail-sent").css('display', 'none');
+            $("#mail-failed").css('display', 'none');
+          },
+          success: function (data) {
+            btn.removeAttr('disabled');
+            btn.html(btnHtml);
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+            if (data.success) {
+              $("#mail-sent").css('display', 'block');
+              form.find('input,textarea').val("");
+            } else {
+              $("#mail-failed").css('display', 'block');
+            }
+          },
+          error: function () {
+            btn.removeAttr('disabled');
+            btn.html(btnHtml);
+            $("#mail-failed").css('display', 'block');
+
+          },
+          complete: function () {
+            btn.removeAttr('disabled');
+            btn.html(btnHtml);
+
+          }
+
+        })
+        e.preventDefault();
+      });
+    });
+
+
+
+    jQuery("body").prepend('<div id="preloader">Loading...</div>');
+    jQuery(document).ready(function () {
+      jQuery("#preloader").remove();
+    });
+
+
+
+
+    $(".mob-portfolio-item a").click(function () {
+      var imgsvf = $(this).children().attr('src');
+      $(".modal-body img").attr('src', imgsvf);
+    });
+
+
+
+
+    $('.loop').owlCarousel({
+      center: true,
+      items: 1,
+      nav: true,
+      loop: true,
+      margin: 0,
+      responsive: {
+        300: {
+          items: 2
+        }
+      }
+    });
+
+
+
+    jQuery(document).ready(function () {
+    var myFullpage = new fullpage('#fullpage', {
+      //sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+      anchors: ['homeSec', 'aboutSec', 'servicesSec', 'awardSec', 'blogSec', 'portfolioSec', 'contactSec'],
+      menu: '#menu',
+      lazyLoad: true,
+    });
+
+  });
+
+
+    $(".toggle-btn, .sidebar-menu .menu-links li a").click(function () {
+      $(this).toggleClass("show");
+      $(".sidebar-menu").toggleClass("show");
+    });
+
+    $(".sidebar-menu .menu-links li a").click(function () {
+      $(".toggle-btn").removeClass("show");
+    });
+
+    $(".contact-btn").click(function () {
+      $(".sidebar-menu").removeClass("show");
+    });
+
+
+
+
+    $(document).ready(function () {
+      if ($(window).width() < 992) {
+        $(".nav-block ").click(function () {
+          $('.blog-sec .nav-tabs').slideToggle("500");
+        });
+      }
+    });
+
+
+
+
+    function disablebtn() {
+      $("#downClick").attr('disabled', 'disabled');
+      $("#upClick").attr('disabled', 'disabled');
+    }
+
+    function enablebtn() {
+      $("#downClick").removeAttr('disabled');
+      $("#upClick").removeAttr('disabled');
+    }
+    var scrolled = 0;
+    //let imgHeight = 0;
+    $(document).ready(function () {
+      $("#downClick").on("click", function () {
+        disablebtn();
+
+        //let imgHeight = $(".portfolio-img img").innerHeight() - 800;
+        let imgHeight = $(".portfolio-tabs .tab-pane.active .portfolio-img img").innerHeight() - 800;
+        console.log('img height: ' + imgHeight);
+
+        if (scrolled >= imgHeight) {
+          //scrolled = imgHeight;
+        } else {
+          scrolled += 400;
+        }
+        console.log('updated scrolled ' + scrolled);
+
+        $(".portfolio-img").animate({
+          scrollTop: scrolled
+        }, 'fast', 'swing', enablebtn);
+      });
+
+      $(".portfolio-tabs .nav-link").on("click", function () {
+        scrolled = 0;
+      });
+
+      $("#upClick").on("click", function () {
+        disablebtn();
+        let imgHeight = $(".portfolio-img img").innerHeight();
+
+        console.log('Scrolled' + scrolled);
+        if (scrolled <= 0) {
+          scrolled = 0;
+        } else {
+          scrolled -= 400;
+        }
+        console.log('updated scrolled ' + scrolled);
+        $(".portfolio-img").animate({
+          scrollTop: scrolled
+        }, 'fast', 'swing', enablebtn);
+
+      });
+    });
+
+    $('.button').click(function () {
+      var idToSRC = 'http://placehold.it/60x60/84a&text=' + this.id + '';
+      $('#picture').attr('src', idToSRC);
+    });
+  </script>
+</body>
+
 </html>
