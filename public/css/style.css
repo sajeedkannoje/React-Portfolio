@@ -708,7 +708,7 @@
   =================================*/
   
   .about-sec {
-    background: #9ba8b1;
+    background: #4BBFC3;
     position: relative;
   }
   
@@ -1264,7 +1264,7 @@
   =================================*/
   
   .contact-sec {
-    background: #4ab2c1;
+    background: #66bb6a;
     overflow: hidden;
     position: relative;
   }
@@ -1291,7 +1291,7 @@
     top: 0;
     height: 100%;
     transition: all 1.5s;
-    background-color: #4ab2c1;
+    background-color: #66bb6a;
     z-index: 999;
   }
   
@@ -2696,7 +2696,7 @@
     }
   
     .hero-banner {
-        background: url(../images/hero-banner-mob.png) center no-repeat;
+        background: url(../images/hero-banner.jpg) center no-repeat;
         background-size: cover;
     }
   

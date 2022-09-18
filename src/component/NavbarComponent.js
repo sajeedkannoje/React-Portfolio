@@ -1,6 +1,10 @@
 import React from 'react'
-
+import $ from 'jquery';
 export default function NavbarComponent() {
+    const sidebar = (e) =>{
+        $(this).toggleClass("show");
+        $(".sidebar-menu").toggleClass("show");
+    }
   return (
     <header className="header">
     <div className="container">
@@ -10,7 +14,7 @@ export default function NavbarComponent() {
             </div>
             <div className="right-nav">
                 <a href="#contactSec" className="contact-btn">contact us</a>
-                <a href="" className="toggle-btn">
+                <a href="#" onClick={sidebar} className="toggle-btn">
                     <div className="hamburger">
                         <span></span>
                         <span></span>

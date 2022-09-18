@@ -1,10 +1,51 @@
 import React from 'react'
+import $ from 'jquery';
 
 export default function FullpageComponent() {
+  var scrolled = 0;
+  const  disablebtn = ()=> {
+    $("#downClick").attr('disabled', 'disabled');
+    $("#upClick").attr('disabled', 'disabled');
+  }
+
+  const enablebtn =()=> {
+    $("#downClick").removeAttr('disabled');
+    $("#upClick").removeAttr('disabled');
+  }
+  const UpClick = (e) =>{
+      disablebtn();
+      let imgHeight = $(".portfolio-img img").innerHeight();
+      if (scrolled <= 0) {
+        scrolled = 0;
+      } else {
+        scrolled -= 400;
+      }
+      $(".portfolio-img").animate({
+        scrollTop: scrolled
+      }, 'fast', 'swing', enablebtn);
+
+    };
+  const DownClick = (e) => {
+        disablebtn();
+  
+        //let imgHeight = $(".portfolio-img img").innerHeight() - 800;
+        let imgHeight = $(".portfolio-tabs .tab-pane.active .portfolio-img img").innerHeight() - 800;
+        console.log('img height: ' + imgHeight);
+  
+        if (scrolled >= imgHeight) {
+          //scrolled = imgHeight;
+        } else {
+          scrolled += 400;
+        }
+        console.log('updated scrolled ' + scrolled);
+  
+        $(".portfolio-img").animate({
+          scrollTop: scrolled
+        }, 'fast', 'swing', enablebtn);
+    } 
   return (
     <div id="fullpage">
   <section className="hero-banner section " id="section1">
-    <div className="horse-img" />
     <div className="container">
       <div className="banner-content">
         <h4>You ideate,</h4>
@@ -19,9 +60,9 @@ export default function FullpageComponent() {
       <div className="row align-items-center about-row">
         <div className="col-lg-6 order-lg-2">
           <div className="about-content">
-            <h4>WE GIVE</h4>
-            <h2>wings to your ideas</h2>
-            <h6>We are a talented team of designers and we love what we do!</h6>
+            <h4>TURNING YOUR IDEAS 🚀</h4>
+            <h2>into real life products is my calling.</h2>
+            <h6>We are a talented freelancer team of designers and we love what we do!</h6>
           </div>
           <div className="row align-items-center">
             <div className="col-6 col-md-3 col-lg-3">
@@ -34,16 +75,11 @@ export default function FullpageComponent() {
                 <img loading="lazy" src="images/text-shape2.png" alt="" />
               </div>
             </div>
-            <div className="col-md-4 col-lg-4">
-              <div className="about-rating">
-                <img loading="lazy" src="images/about-rating.png" alt="" />
-              </div>
-            </div>
           </div>
         </div>
         <div className="col-lg-6 order-lg-1">
           <div className="about-img">
-            <img loading="lazy" src="images/dog-img.png" alt="" />
+            <img loading="lazy" src="images/girl-idea.png" alt="" />
           </div>
         </div>
       </div>
@@ -115,7 +151,7 @@ export default function FullpageComponent() {
       </div>
     </div>
   </section>
-  <section className="awards-sec section " id="section4">
+  {/* <section className="awards-sec section " id="section4">
     <div className="container">
       <div className="awards-block">
         <div className="awards-heading">
@@ -181,8 +217,8 @@ export default function FullpageComponent() {
         </div>
       </div>
     </div>
-  </section>
-  <section className="blog-sec section" id="section5">
+  </section> */}
+  <section className="blog-sec section" id="section4">
     <div className="container">
       <div className="blog-">
         <div className="row align-items-center">
@@ -714,11 +750,11 @@ export default function FullpageComponent() {
         </ul>
         <div className="tab-content" id="myTabContent">
           <div className="arrow-block">
-            <a href="" className="arrow-icon" id="upClick" />
+            <a href="#" className="arrow-icon" id="upClick" onClick={UpClick} />
             <a
-              href=""
+              href="#"
               className="arrow-icon"
-              id="downClick"
+              id="downClick" onClick={DownClick}
             />
           </div>
           <div
