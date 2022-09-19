@@ -1,13 +1,15 @@
 import React from 'react'
 import $ from 'jquery';
+import { useState } from 'react';
+import ReactDOM from 'react-dom/client';
 
 export default function FullpageComponent() {
   var scrolled = 0;
+
   const  disablebtn = ()=> {
     $("#downClick").attr('disabled', 'disabled');
     $("#upClick").attr('disabled', 'disabled');
   }
-
   const enablebtn =()=> {
     $("#downClick").removeAttr('disabled');
     $("#upClick").removeAttr('disabled');
@@ -24,7 +26,7 @@ export default function FullpageComponent() {
         scrollTop: scrolled
       }, 'fast', 'swing', enablebtn);
 
-    };
+  };
   const DownClick = (e) => {
         disablebtn();
   
@@ -42,7 +44,43 @@ export default function FullpageComponent() {
         $(".portfolio-img").animate({
           scrollTop: scrolled
         }, 'fast', 'swing', enablebtn);
-    } 
+  };
+  const [textArea,SetTextArea] = useState("");
+
+  const [inputs,setInputs] = useState({
+    firstname:"",
+    lastname:"",
+    email:"",
+    message:"",
+    phone:"",
+  });
+  const handleChange = (event) => {
+    SetTextArea(event.target.value);
+    setInputs({...inputs,[event.target.name]: event.target.value})
+  }
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const response = await fetch(`${process.env.REACT_APP_API_PATH}/sendmail`, {
+      method: 'POST',
+      body: JSON.stringify(inputs), // string or object
+      headers: {
+          'Content-Type': 'application/json'
+      }
+  });
+  const resp = await response.json(); //extract JSON from the http response
+  console.log(resp.success)
+    if(resp.success === true){
+      $('#mail-sent').show();
+      setTimeout(() => {
+        $('#mail-sent').hide()
+      }, 3000);
+    }else{
+      $('#mail-failed').show();
+      setTimeout(() => {
+        $('#mail-failed').hide()
+      }, 3000);
+    }
+  }
   return (
     <div id="fullpage">
   <section className="hero-banner section " id="section1">
@@ -151,73 +189,7 @@ export default function FullpageComponent() {
       </div>
     </div>
   </section>
-  {/* <section className="awards-sec section " id="section4">
-    <div className="container">
-      <div className="awards-block">
-        <div className="awards-heading">
-          <h2>
-            “their highly tuned creative skills and loyalty set them apart.”
-          </h2>
-          <h6>
-            <strong>- Patrick Nagle,</strong> CEO at <a href="#">Rehab.com</a>
-          </h6>
-        </div>
-        <div className="row">
-          <div className="col-md-3">
-            <div className="awards-img-box">
-              <img
-                loading="lazy"
-                src="images/awards-img-1.png"
-                className="awards-desktop"
-                alt=""
-              />
-              <img
-                loading="lazy"
-                src="images/awards-img-mob-1.png"
-                className="awards-mob"
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="col-md-3">
-            <div className="awards-img-box">
-              <img
-                loading="lazy"
-                src="images/awards-img-2.png"
-                className="awards-desktop"
-                alt=""
-              />
-              <img
-                loading="lazy"
-                src="images/awards-img-mob-2.png"
-                className="awards-mob"
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="awards-box d-flex">
-              <div className="d-flex align-items-center web-guru awards-box-inner">
-                <img loading="lazy" src="images/awards-img-3.png" alt="" />
-                <h4>guru of the day</h4>
-              </div>
-              <div className="d-flex align-items-center awards-box-inner">
-                <img loading="lazy" src="images/awards-img-4.png" alt="" />
-                <h4>
-                  mindsparklemag <br />
-                  site of the day
-                </h4>
-              </div>
-              <div className="awards-box-inner">
-                <h4>Nominee</h4>
-                <img loading="lazy" src="images/awards-img-5.png" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> */}
+ 
   <section className="blog-sec section" id="section4">
     <div className="container">
       <div className="blog-">
@@ -1047,27 +1019,31 @@ export default function FullpageComponent() {
           <div className="col-md-12 col-lg-5">
             <div className="contact-form">
               <h4>Drop us a message, quotes are free!</h4>
-              <form id="mail-form" method="post" action="mail.php">
+              <form id="mail-form" onSubmit={handleSubmit} >
                 <div className="form-group half-block">
                   <label htmlFor="first-name">First Name</label>
                   <input
                     required=""
-                    name="first_name"
+                    name="firstname"
                     type="text"
                     className="form-control"
                     placeholder=""
                     id="first-name"
+                    value={inputs.firstname || ""} 
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="form-group half-block">
                   <label htmlFor="last-name">Last Name</label>
                   <input
                     required=""
-                    name="last_name"
+                    name="lastname"
                     type="text"
                     className="form-control"
                     placeholder=""
                     id="last-name"
+                    value={inputs.lastname || ""} 
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="form-group half-block">
@@ -1079,6 +1055,8 @@ export default function FullpageComponent() {
                     className="form-control"
                     placeholder=""
                     id="email"
+                    value={inputs.email || ""} 
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="form-group half-block">
@@ -1089,6 +1067,8 @@ export default function FullpageComponent() {
                     type="tel"
                     className="form-control"
                     placeholder=""
+                    value={inputs.phone || ""} 
+                    onChange={handleChange}
                     id="phone"
                   />
                 </div>
@@ -1099,6 +1079,8 @@ export default function FullpageComponent() {
                     name="message"
                     className="form-control"
                     placeholder="your message here"
+                    value={inputs.message || ""} 
+                    onChange={handleChange}
                     defaultValue={""}
                   />
                 </div>
