@@ -60,6 +60,7 @@ export default function FullpageComponent() {
   }
   const handleSubmit = async (event) => {
     event.preventDefault();
+    $('.submit-btn').prop('disabled',true);
     const response = await fetch(`${process.env.REACT_APP_API_PATH}/sendmail`, {
       method: 'POST',
       body: JSON.stringify(inputs), // string or object
@@ -68,7 +69,6 @@ export default function FullpageComponent() {
       }
   });
   const resp = await response.json(); //extract JSON from the http response
-  console.log(resp.success)
     if(resp.success === true){
       $('#mail-sent').show();
       setTimeout(() => {
@@ -80,6 +80,7 @@ export default function FullpageComponent() {
         $('#mail-failed').hide()
       }, 3000);
     }
+     $('.submit-btn').prop('disabled',true);
   }
   return (
     <div id="fullpage">
