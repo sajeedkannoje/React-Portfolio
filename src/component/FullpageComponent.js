@@ -67,7 +67,7 @@ export default function FullpageComponent() {
       headers: {
           'Content-Type': 'application/json'
       }
-  });
+    });
   const resp = await response.json(); //extract JSON from the http response
     if(resp.success === true){
       $('#mail-sent').show();
@@ -81,6 +81,7 @@ export default function FullpageComponent() {
       }, 3000);
     }
      $('.submit-btn').prop('disabled',true);
+     setInputs(false);
   }
   return (
     <div id="fullpage">
